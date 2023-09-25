@@ -13,8 +13,8 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "Auto-generated Wires"
-PROJECT_NAME_FULL: str = "Auto-generated Wires Dataset for Semantic Segmentation with Domain-Independence"
+PROJECT_NAME: str = "Electric Wire"
+PROJECT_NAME_FULL: str = "Auto-generated Wires for Semantic Segmentation with Domain-Independence"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
