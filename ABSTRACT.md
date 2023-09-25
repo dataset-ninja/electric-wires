@@ -20,4 +20,15 @@ The labeling procedure with chroma separation automatically generates labeled da
 The backgrounds that we propose for a domain-independent dataset can be divided in 3 categories: lowly textured images with shadows and lights; highly textured images
 with color gradients and regular or geometric shapes; highly textured images with chaotic and irregular shapes. These backgrounds introduce high variance in the environment properties that should be ignored in the learning task. For instance, in our task the segmentation algorithm will ignore shadows and cubic or spherical objects, while it should focus more in cylindrical shapes, hence we chose the set of backgrounds in Figure 2 according to these considerations.
 
+This strategy has been employed to generate a dataset of 28584 RGB images 720 × 1280 for semantic segmentation of electric wires. The raw dataset has 3176 images and it includes blue, red, yellow, white and black wires, with different light setups and shapes. To improve the screen and wire separation, besides the hue, we also use the saturation and value channels. For each raw image, a background image (4000 × 2248) is randomly picked among the 15 shown in Figure 2 and 8 new synthetic images are created, as visible in Figure 1. In each new image, foreground and background are separately augmented (by using the mask) before the merging. In particular, the background is randomly flipped, shifted, scaled and rotated (all with probability <i>p = 0.5</i>). Then, it is processed with motion blur and elastic transformation (<i>p = 0.2</i>), and in the end it is randomly cropped at 1280×720 (<i>p = 1</i>). The foreground, instead, is transformed only by shuffling the channels (<i>p = 0.5</i>), converting to grey (<i>p = 0.1</i>) and randomizing the hue in the range of [−100, 100] (<i>p = 0.5</i>).
+
+![Fig1](https://i.ibb.co/VLz3JHs/Screenshot-2023-09-25-192921.png)
+
+<i>Fig. 1: Schematic process to generate the 8 synthetic images by background-foreground separated augmentation and imageoverlay</i>
+
+![Fig2](https://i.ibb.co/gPV8M22/Screenshot-2023-09-25-192952.png)
+
+<i>Fig. 2: Images used to replace the background in the output dataset.</i>
+
+
 
