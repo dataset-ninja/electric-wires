@@ -5,11 +5,8 @@ Authors present a procedure to automatically generate an high-quality training d
 The Chroma Key (CK) is a technique widely used in film and motion picture industries to combine two images together (usually foreground and background). It requires a foreground image containing a target object that authors want to overlap to a background image.  The target must be placed in front of a monochromatic panel, called screen (usually green or blue). The technique consists of a chroma-separation phase, where authors isolate the target object (foreground) from the monochromatic panel (original background) and then an image-overlay phase, where they compose the foreground and a
 new background. In the chroma-separation phase, authors choose
 a specific hue range which contains solely the color of the screen (e.g. green) and exclude any other color belonging to the foreground. Then, by finding the pixels within that range, authors obtain a mask for the target Imt and a complementary mask for the monochromatic background Ims. Thus, creating a dataset with this technique is really straightforward and it can be done in 2 steps:
-1. Record an high quality video of the target object on a
-green screen, from which authors gather the input images;
-2. Find the chroma range of the pixels belonging to the
-monochromatic background and create the corespondent
-mask with chroma separation.
+1. Record an high quality video of the target object on a green screen, from which authors gather the input images;
+2. Find the chroma range of the pixels belonging to the monochromatic background and create the corespondent mask with chroma separation.
 
 In this dataset, while gathering the images, authors hold the electric wire by its extremities and move it within the frame composing different shapes. To generalize more authors also change the light setups, the wire color and the number of wire in the scene. From a random video frame authors easily find the hue levels for the specific screen color authors are using (green or blue). These levels, once found for one image, remain valid for any other image taken with the same light temperature setting and white balance. Hence, known the chroma range of the screen authors immediately obtain the mask for the wire from each frame in the video.
 

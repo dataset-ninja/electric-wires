@@ -14,15 +14,15 @@ from dataset_tools.templates import (
 # * Before uploading to instance #
 ##################################
 PROJECT_NAME: str = "Electric Wires"
-PROJECT_NAME_FULL: str = "Auto-generated Wires for Semantic Segmentation with Domain-Independence"
+PROJECT_NAME_FULL: str = "Auto-generated Wires for Semantic Segmentation with Domain-Independence (Synthetic Dataset)"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.Unknown()
-APPLICATIONS: List[Union[Industry, Domain, Research]] = [Domain.Engineering(is_used=False)]
-CATEGORY: Category = Category.EnergyAndUtilities()
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Construction(is_used=False)]
+CATEGORY: Category = Category.Construction()
 
 CV_TASKS: List[CVTask] = [CVTask.SemanticSegmentation()]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.SemanticSegmentation()]
